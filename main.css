@@ -1,0 +1,132 @@
+* {
+    /* margin: 0;
+    padding: 0; */
+    box-sizing: border-box;
+    /* if an element has a size CSS will constrain content to fit within the box */
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    /* background-color: black; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* background-color: ; */
+    font-family: 'Inter', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    align-items: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    justify-content: center;
+    margin: 0;
+    padding: 20px;
+}
+
+section {
+    width: 40em;
+    height: 40em;
+    min-width: 4em;
+    min-height: 4em;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.gameboard-wrapper {
+    /* margin:3rem auto; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    /* width: 50em;
+    height: 50em;
+    min-width: 4em;
+    min-height: 4em; */
+    /* width: 150px; */
+    /* gap: 2.5%; */
+    /* padding: 5px; */
+}
+
+/* .cell{
+    width: 30%;
+    height: 96px;
+    border: 1px solid grey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 64px;
+} */
+        
+
+
+.flip-card {
+  background-color: transparent;
+  width: 100px;
+  height: 200px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  transform: rotateY(180deg);
+}
+
+/* This container is needed to position the front and back side */
+/* .flip-card-inner {
+  position: relative;
+  width: 100px;
+  height: 200px;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+  /* cursor: pointer; */
+/* } */ 
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+
+.clicked {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  /* -webkit-backface-visibility: hidden; Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.clicked .flip-card-front {
+  /* background-color: #bbb; */
+  color: black;
+  transform: rotateY(180deg);
+}
+
+/* Style the back side */
+.clicked .flip-card-back {
+  /* background-color: dodgerblue; */
+  color: white;
+  transform: rotateY(0deg);
+}
+
+.flip-card-back {
+    transform: rotateY(180deg);
+}
+
+.reset-button {
+    align-items: center;
+    margin: 20px;
+}
+
+h3 {
+    align-items: center;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    justify-content: center;
+    margin: 0;
+}
+
