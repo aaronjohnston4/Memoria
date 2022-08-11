@@ -25,15 +25,16 @@ function flipCard() {
 
 
 // Variables
-let allCardsArray = ["#array1", "#array2", "#array3", "#array4", "#array5", "#array6", "#array7", "#array8", "#array9", "#array10", "#array11", "#array12"];
-allCardsArray.sort((a,b) => 0.5 - Math.random());
-console.log(allCardsArray)
+// let allCardsArray = ["array1", "array1", "array2", "array2", "array3", "array3", "array4", "array4", "array5", "array5", "array6", "array6"];
+// allCardsArray = allCardsArray.sort((a,b) => 0.5 - Math.random());
+// console.log(allCardsArray)
+
 
 // console.log(allCardsArray)
 const cards = document.querySelectorAll(".flip-card");
 // cards.sort((a,b) => 0.5 - Math.random());
 // const gameboard = document.querySelector("gameboard");
-const resetButton = document.querySelector(".reset-button")
+const resetButton = document.querySelector(".reset-button");
 // const flipCard = document.querySelectorAll(".flip-card-front");
 let scoreBoard = document.querySelector(".score");
 let card1 = "";
@@ -63,34 +64,57 @@ function addFlip(){
 
 }
 let myMatches = 0;
+function checkPoints() {
+    if ( calculateTotal(playerHand) < calculateTotal(dealerHand) || playerHand == 21) {
+        alert("You Lose! Dealer Wins!");
+        console.log(`Player hand: ${playerHand}, dealer hand: ${dealerHand}`)
+    }
+    else {
+        alert("You Win! Dealer Lose!");
+        console.log(`Player hand: ${playerHand}, dealer hand: ${dealerHand}`)
+    }
+    //Add a condiiton for ties too here
+}
+
+
 cards.forEach(card => {
     // console.log(card)
     card.addEventListener("click", () => {
         card.classList.add("clicked");
         console.log(card1 === "");
-    if(card1 === ""){
-        card1 = card
-        // console.log(card.classList)
-    } else {
-        console.log(card.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc);
-        console.log(card1.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc);
-        if(card1.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc == card.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc){
-            myMatches++;
-            card1 = "";
-            scoreBoard.innerHTML = `You have made ${myMatches} matches`
-        } else if(card1.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc !== card.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc){
-            myMatches++;
-            card1 = "";
-            // scoreBoard.innerHTML = `You have made ${myMatches} matches`
-            // card.addEventListener("click", () => {
-                card.classList.remove("clicked");
-                // console.log(card1 === "");
-        // })
-        console.log("no match")
-        console.log(card.classList);
-    }
+        if(card1 === ""){
+            card1 = card
+            // console.log(card.classList)
+        } else {
+            // console.log(card.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc);
+            // console.log(card1.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc);
+            if(card1.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc == card.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc){
+                myMatches++;
+                card1 = "";
+                scoreBoard.innerHTML = `You have made ${myMatches} matches`
+            } else {
+                card.forEach(card => {
+                    card1.flip-card
+                })
+                card1 = "";
+                card.addEventListener("click", () => {
+                    card.classList.remove("clicked")
+                })
+            }
+            // else if(card1.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc !== card.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc){
+            //     //Flip card back function
+            // }
+            // console.log("no match")
+            // console.log(card.classList);
+        }
+        // cards.f(card => {
+        // for(let i = 0; i < allCardsArray.length; i++) {
+        //     //add class to each card
+        //     card.classList.add(allCardsArray[i])
+        // }
+    // console.log(cards)
     // cards.sort(() => (Math.random() - 0.5));
-}
+    })
     // if 
     // if(card2 !== card1)
     // function disableCards() {
@@ -98,12 +122,8 @@ cards.forEach(card => {
     //     card2.removeEventListener('click', flipCard);
     //   }
 
-
-        // console.log(card.classList)
-    })
+    // console.log(card.classList)
 })
-
-
 // cards.forEach( flipCardFront => {
 //     flipCardFront.addEventListener('click', move)
 //     // addEventListener accepts an optional argument -
