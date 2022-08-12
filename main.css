@@ -72,7 +72,6 @@ section {
 
 /* Style the back side */
 .clicked .flip-card-back {
-  color: white;
   transform: rotateY(0deg);
 }
 

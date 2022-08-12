@@ -253,3 +253,16 @@ addEventListener("click", (e) => {
     
     // 
     
+
+
+    // let myMatches = 0;
+// function checkPoints() {
+//     if (calculateTotal(playerHand) < calculateTotal(dealerHand) || playerHand == 21) {
+//         alert("You Lose! Dealer Wins!");
+//         console.log(`Player hand: ${playerHand}, dealer hand: ${dealerHand}`)
+//     }
+//     else {
+//         alert("You Win! Dealer Lose!");
+//         console.log(`Player hand: ${playerHand}, dealer hand: ${dealerHand}`)
+//     }
+// }
