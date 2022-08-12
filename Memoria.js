@@ -25,15 +25,27 @@ function flipCard() {
 
 
 // Variables
-// let allCardsArray = ["array1", "array1", "array2", "array2", "array3", "array3", "array4", "array4", "array5", "array5", "array6", "array6"];
-// allCardsArray = allCardsArray.sort((a,b) => 0.5 - Math.random());
-// console.log(allCardsArray)
+
 
 
 // console.log(allCardsArray)
 const cards = document.querySelectorAll(".flip-card");
+let shuffledArray = [];
+function shuffle (arr) {
+    for (let i=0;i <arr.length; i++){
+        shuffledArray.push(arr[i]);
+    }
+    shuffledArray.sort( () => .5 - Math.random());
+    cards.forEach(card => {
+        card.remove();
+    })
+    shuffledArray.forEach(newCard => {
+        gameboard.appendChild(newCard)
+    })
+}
+
 // cards.sort((a,b) => 0.5 - Math.random());
-// const gameboard = document.querySelector("gameboard");
+const gameboard = document.querySelector("#gameboard");
 const resetButton = document.querySelector(".reset-button");
 // const flipCard = document.querySelectorAll(".flip-card-front");
 let scoreBoard = document.querySelector(".score");
@@ -41,7 +53,9 @@ let card1 = "";
 let card2 = "";
 let currentPlayer = cards;
 let gameActive = true;
-const lives = 2;
+let lives = 2;
+let livesCount = document.getElementById("livesCount")
+
 
 resetButton.addEventListener('click', function(evt) {
     cards.forEach(function(e) {
@@ -76,7 +90,7 @@ function checkPoints() {
     //Add a condiiton for ties too here
 }
 
-
+shuffle(cards)
 cards.forEach(card => {
     // console.log(card)
     card.addEventListener("click", () => {
@@ -93,13 +107,22 @@ cards.forEach(card => {
                 card1 = "";
                 scoreBoard.innerHTML = `You have made ${myMatches} matches`
             } else {
-                card.forEach(card => {
-                    card1.flip-card
-                })
-                card1 = "";
-                card.addEventListener("click", () => {
-                    card.classList.remove("clicked")
-                })
+                // card.classList.remove("clicked")
+                setTimeout(() => {
+                    card.classList.remove("clicked");
+                    card1.classList.remove("clicked");
+                    card1 = "";
+                  }, "600")
+                  lives = lives - 1;
+                  livesCount.innerHTML = ` Player has ${lives} lives left`
+                  if (lives === 0){
+                  livesCount.innerHTML = `Game Over`;
+                  for (let i =0; i <cards.length; i++){
+                    cards[i].removeEventListener("click", this)
+                  }
+
+                  }
+
             }
             // else if(card1.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc !== card.childNodes[1].childNodes[3].childNodes[1].childNodes[1].childNodes[1].currentSrc){
             //     //Flip card back function
