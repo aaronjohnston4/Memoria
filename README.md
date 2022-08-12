@@ -36,6 +36,24 @@ https://github.com/aaronjohnston4/Memoria
 
 I plan to make the game a little more appealing with stylying the game closer to the wire-frame by manipulating the CSS. I would also like to make a dark mode setting in the top right hand corner.
 
+# Cites
+
+https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+
+ https://marina-ferreira.github.io/tutorials/js/memory-game/
+
+ https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/removeEventListener
+
+ https://developer.mozilla.org/en-US/docs/Web/API/setTimeout
+
+ https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/length
+
+ https://stackoverflow.com/questions/41206642/javascript-math-random-in-a-for-loop
+
+ https://www.w3schools.com/howto/howto_css_flip_card.asp
+
+ 
+
 
 
 
