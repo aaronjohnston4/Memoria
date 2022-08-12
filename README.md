@@ -30,7 +30,7 @@ A lot of the game was produced within Javascript. The process consists of random
 
 You initiate Memoria by clicking your first card. After clicking your first card, you then click your second. If your second card is a matching card to the one that you chose, then you get a match. With this outcome, you will get to move forward to going for your next card match. If you do not match a set of cards, you will lose a life. You have two lives to make all the matches on the Memoria memory game board. If you lose your two lives, then game over. You can reset the board by pushing the refresh button on the bottom of the screen.
 
-https://github.com/aaronjohnston4/Memoria
+https://aaronjohnston4.github.io/Memoria/
 
 
 # Next Steps:
