@@ -16,7 +16,7 @@ function shuffle(arr) {
     for (let i = 0; i < arr.length; i++) {
         shuffledArray.push(arr[i]);
     }
-    //this ranomizes that array
+    //this randomizes that array
     shuffledArray.sort(() => .5 - Math.random());
     cards.forEach(card => {
         card.remove();
