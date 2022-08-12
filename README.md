@@ -143,3 +143,57 @@ You will have a maximum of 10 minutes to present your project following these gu
 - If your instructors determine that your project does not meet the above requirements (denoted using checkboxes), you will be given 3 calendar days to address the deficiencies identified. However, be aware that **there is only a single opportunity to resubmit a project during the course**. For example, if you have to resubmit Project 1, you will not have an opportunity to resubmit Projects 2, 3, or 4.
 - Immediately after your presentation, your instructor and/or outcomes may provide you with feedback that will benefit your project and perhaps the projects of other students as well.
 - If there is a specific section of code that you would like an instructor to provide additional feedback on, please ask!
+
+
+
+
+pseudo code
+
+
+// 1. Link HTML, Javascript and CSS to webpage
+
+// 2.         HTML
+//     a. Make Header of title
+//     b. div of all images
+//         - create container wrapper for gameboard
+//         - div with id and class of each of the 12 total images
+//         - 6 images duplicated to equal 12
+//         - link all images 
+//         - sizing for cells and wrapper
+//     c. button for refresh (going to be an icon)
+//     d. lives count in h3 (add icon next to comment)
+
+
+// 3.         CSS
+//     a. align everything in center
+//     b. font Inter at light 300 level for H1 header title
+//        font Roboto Thin 100 level for h3 player turns
+//     c. font icons - settings to turn to dark mode
+//     d. refresh icon instead of refresh button
+//     e. person icon next to lives
+
+
+
+
+// 3.       Javascript
+
+//     a. Setup global variables - Player lives at bottom of screen, cards/gameboard, refresh button, settings button
+
+//     b. Make an array of cards.
+
+//     b. Write a shufflecards() function
+    
+//     c. write a chooseCard() function
+//         Somehow make it to where you choose 2 cards and make it check to see if it's the duplicate card.
+//         If correct you have a match, and if not then you lose a turn
+
+//     d. attach chooseCard() function for each cards (like in tic tac toew)
+
+//     c. Write a cardMatch() function
+//         When running through the array the car is the duplicate label as a match
+
+//     e. create a function for darkmode in the settings button
+
+//     e. Test out the code to see if it works.
+
+// 
