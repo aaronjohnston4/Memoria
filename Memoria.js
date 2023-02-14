@@ -84,7 +84,24 @@ cards.forEach(card => {
                     for (let i = 0; i < cards.length; i++) {
                         cards[i].removeEventListener("click", this)
                     }
-
+                    // resetting the score board and lives count to their initial values
+                    myMatches = 0;
+                    scoreBoard.innerHTML = `You have made ${myMatches} matches`
+                    lives = 2;
+                    livesCount.innerHTML = ` Player has ${lives} lives left`
+                    // re-shuffling the cards and adding the click event listener to each card again
+                    shuffledArray = [];
+                    shuffle(cards);
+                    cards.forEach(card => {
+                        gameboard.appendChild(card);
+                        card.classList.remove("clicked");
+                        card1 = "";
+                        card2 = "";
+                        gameActive = true;
+                        card.addEventListener("click", () => {
+                            flipCard(card);
+                        })
+                    })
                 }
 
             }
